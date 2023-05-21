@@ -1,8 +1,8 @@
-/* eslint-disable import/extensions */
-import Widget from './Widget';
+import ChatWidget from '../widgets/chat/chat';
 
-const widget = new Widget('wss://ahj-sse-ws-chat.herokuapp.com/ws');
+// Адрес вебсокета
+// const URL_WEBSOCKET = 'ws://localhost:7070';
+const URL_WEBSOCKET = 'wss://sse-wss-chat.onrender.com//ws';
 
-// const widget = new Widget('ws://localhost:8080/ws');
-
-widget.createForm();
+const chatWidget = new ChatWidget(document.querySelector('#widget-container'), URL_WEBSOCKET);
+chatWidget.run();
